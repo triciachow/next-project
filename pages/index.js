@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <h1>Home page</h1>
       <p>
         Officia cillum tempor eiusmod deserunt ea occaecat esse sunt culpa
@@ -17,7 +16,6 @@ export default function Home() {
       <Link href="/ninjas">
         <a>See Ninja Listing</a>
       </Link>
-      <Footer />
     </div>
   );
 }
