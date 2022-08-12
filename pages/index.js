@@ -1,10 +1,11 @@
 import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
     <div>
-      <h1>Home page</h1>
-      <p>
+      <h1 className={styles.title}>Home page</h1>
+      <p className={styles.text}>
         Officia cillum tempor eiusmod deserunt ea occaecat esse sunt culpa
         excepteur Lorem. Esse nostrud occaecat esse dolor laboris cupidatat.
         Cupidatat consequat nostrud fugiat id veniam Lorem ipsum tempor aliquip.
@@ -12,7 +13,7 @@ export default function Home() {
         eu nisi reprehenderit reprehenderit magna velit.
       </p>
       <Link href="/ninjas">
-        <a>See Ninja Listing</a>
+        <a className={styles.btn}>See Ninja Listing</a>
       </Link>
     </div>
   );
