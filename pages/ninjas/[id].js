@@ -15,14 +15,28 @@ export const getStaticPaths = async () => {
   });
 
   return {
+    // We'll pre-render only these paths at build time.
+    // { fallback: false } means other routes should 404.
     paths,
     fallback: false,
   };
 };
 
-export const getStaticProps = async context => {
-  const id = context.params.id;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+// getStaticProps receives a `context` as default
+// export const getStaticProps = async context => {
+//   const id = context.params.id;
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+//   const data = await res.json();
+
+//   return {
+//     props: { ninja: data },
+//   };
+// };
+
+export const getStaticProps = async ({ params }) => {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${params.id}`
+  );
   const data = await res.json();
 
   return {
